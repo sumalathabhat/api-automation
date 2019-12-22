@@ -17,8 +17,8 @@ import utils.ResponseCode;
 public class RestautantCollectionCityTest extends BaseTest implements ResponseCode{
 	 private static final Logger logger= LoggerFactory.getLogger("Restaurant collection api tests");
 	 CollectionsValidations restValidate = new CollectionsValidations();
-	 
-	
+
+
 	 //Pass valid city_id and expect return of restaurants collections
 	 @Test
 	 public void getRestaurantCollectionsCity()
@@ -30,25 +30,33 @@ public class RestautantCollectionCityTest extends BaseTest implements ResponseCo
 		restValidate.goodRequest(response);
 		restValidate.validateCollectionsData(response);
 	 }
-	 
-	
-	  //Pass negative city_id and expect system does not return any collection
-	  
+	 //tested for city_id 4. can also test for multiple valid values of city_id.
+
+
+	  //Pass negative city_id and expect 400
 	  @Test public void getRestaurantCollectionsNegativeId() {
-	  logger.info("Fetch all the resturant collections based on valid city_id");
-	  RestAssured.baseURI = CollectionApiConfig.getHost(); String uri =
-	  CollectionApiConfig.getCollectionsByCity("city_id2"); Response response=
-	  ApiUtils.getApiResponse(OK,uri); restValidate.goodRequest(response);
-	  restValidate.validateEmptyCollections(response); }
-	  
+	  logger.info("Fetch all the resturant collections based on negative city_id");
+	  RestAssured.baseURI = CollectionApiConfig.getHost(); 
+	  String uri = CollectionApiConfig.getCollectionsByCity("city_id2"); 
+	  Response response = ApiUtils.getApiResponse(BAD_REQUEST,uri);
+	  restValidate.validateBadRequests(response); 
+	  }
+
 	  //Pass 0 for city_id and expect 400
-	  
 	  @Test public void getRestaurantCollectionsInvalidCity() {
-	  logger.info("Fetch all the resturant collections based on valid city_id");
-	  RestAssured.baseURI = CollectionApiConfig.getHost(); String uri =
-	  CollectionApiConfig.getCollectionsByCity("city_id3"); Response response=
-	  ApiUtils.getApiResponse(BAD_REQUEST,uri);
-	  restValidate.validateBadRequests(response); }
-	 
-	 
+	  logger.info("Fetch all the resturant collections based on  city_id as 0");
+	  RestAssured.baseURI = CollectionApiConfig.getHost(); 
+	  String uri = CollectionApiConfig.getCollectionsByCity("city_id3"); 
+	  Response response = ApiUtils.getApiResponse(BAD_REQUEST,uri);
+	  restValidate.validateBadRequests(response); 
+	  }
+	  
+	  //Pass string for City_id and expect 400
+	  @Test public void getRestaurantCollectionsStringCity() {
+	  logger.info("Fetch all the resturant collections based on city_id as String");
+	  RestAssured.baseURI = CollectionApiConfig.getHost(); 
+	  String uri = CollectionApiConfig.getCollectionsByCity("city_id_string"); 
+	  Response response = ApiUtils.getApiResponse(BAD_REQUEST,uri);
+	  restValidate.validateBadRequests(response);
+	  }
 }
