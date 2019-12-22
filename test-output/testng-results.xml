@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="3365" started-at="2019-12-02T04:13:18Z" finished-at="2019-12-02T04:13:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="3365" started-at="2019-12-02T04:13:18Z" finished-at="2019-12-02T04:13:22Z">
+      <class name="com.company.project.tests.collections.RestautantCollectionCounts">
+        <test-method status="PASS" signature="getRestaurantCollectionsCount()[pri:0, instance:com.company.project.tests.collections.RestautantCollectionCounts@4883b407]" name="getRestaurantCollectionsCount" duration-ms="2333" started-at="2019-12-02T04:13:18Z" finished-at="2019-12-02T04:13:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRestaurantCollectionsCount -->
+        <test-method status="PASS" signature="getRestaurantCollectionsEmptyCount()[pri:0, instance:com.company.project.tests.collections.RestautantCollectionCounts@4883b407]" name="getRestaurantCollectionsEmptyCount" duration-ms="384" started-at="2019-12-02T04:13:21Z" finished-at="2019-12-02T04:13:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRestaurantCollectionsEmptyCount -->
+        <test-method status="PASS" signature="getRestaurantCollectionsInvalidCount()[pri:0, instance:com.company.project.tests.collections.RestautantCollectionCounts@4883b407]" name="getRestaurantCollectionsInvalidCount" duration-ms="317" started-at="2019-12-02T04:13:21Z" finished-at="2019-12-02T04:13:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRestaurantCollectionsInvalidCount -->
+        <test-method status="PASS" signature="getRestaurantCollectionsNegativeCount()[pri:0, instance:com.company.project.tests.collections.RestautantCollectionCounts@4883b407]" name="getRestaurantCollectionsNegativeCount" duration-ms="288" started-at="2019-12-02T04:13:21Z" finished-at="2019-12-02T04:13:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getRestaurantCollectionsNegativeCount -->
+      </class> <!-- com.company.project.tests.collections.RestautantCollectionCounts -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [api automation]">
+  <test thread-count="5" name="api validation(failed)">
+    <classes>
+      <class name="com.company.project.tests.RestaurantDetails">
+        <methods>
+          <include name="searchRestaurantsWithQuery"/>
+        </methods>
+      </class> <!-- com.company.project.tests.RestaurantDetails -->
+    </classes>
+  </test> <!-- api validation(failed) -->
+</suite> <!-- Failed suite [api automation] -->
